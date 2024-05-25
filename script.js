@@ -106,7 +106,7 @@ $("#generateRandomUnacceptableString").click(function(){
 $("#startStop").click(function() {
   if ($("#startStop").text() === "Start") {
       var r = $("#inputString").val();
-      $("#inputString").parent().html('<div id="inputString" type="text" class="input-div input-block-level monospaceRegex" placeholder="e.g. 10010101001, abbabaabbaba"><br></div>');
+      $("#inputString").parent().html('<div id="inputString" type="text" class="input-div input-block-level monospaceRegex" placeholder="e.g. 10010101001"><br></div>');
       $("#inputString").html(r === "" ? '<br>' : r);
       resetAutomaton();
       $("#inputString").removeAttr("contenteditable");
@@ -146,7 +146,7 @@ function checkFinalState() {
 
 function stopSimulation() {
   var r = $("#inputString").text();
-  $("#inputString").parent().html('<input id="inputString" type="text" class="input-block-level monospaceRegex" placeholder="e.g. 10010101001, abbabaabbaba">');
+  $("#inputString").parent().html('<input id="inputString" type="text" class="input-block-level monospaceRegex" placeholder="e.g. 10010101001">');
   $("#inputString").keyup(onInputStringChange);
   $("#inputString").change(onInputStringChange);
   $("#inputString").val(r);
@@ -344,7 +344,7 @@ function onRegexOrAutomatonChange() {
   $("#inputNext").attr("disabled", true);
   $("#inputPrevious").attr("disabled", true);
   $("#inputLast").attr("disabled", true);
-  $("#inputString").parent().html('<input id="inputString" type="text" class="input-block-level monospaceRegex" placeholder="e.g. 10010101001, abbabaabbaba" disabled>');
+  $("#inputString").parent().html('<input id="inputString" type="text" class="input-block-level monospaceRegex" placeholder="e.g. 10010101001" disabled>');
   $("#inputString").parent().removeClass("success error");
   $("#inputString").keyup(onInputStringChange);
   $("#inputString").change(onInputStringChange);
